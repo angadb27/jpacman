@@ -18,7 +18,7 @@ public class InkyTest {
     private final Inky inky = (Inky) ghostFactory.createInky();
 
     /**
-     * Tests the AI move for Inky.
+     * Test if Inky was created.
      */
     @Test
     void inkyIsNotNull() {
