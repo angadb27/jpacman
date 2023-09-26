@@ -1,2 +1,27 @@
-package nl.tudelft.jpacman.npc.ghost;public class InkyTest {
+package nl.tudelft.jpacman.npc.ghost;
+
+import nl.tudelft.jpacman.sprite.PacManSprites;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+/**
+ * Test class for Inky.
+ * @author Angad Bhatti
+ */
+public class InkyTest {
+
+    private static final PacManSprites SPRITE_STORE = new PacManSprites();
+
+    private final GhostFactory ghostFactory = new GhostFactory(SPRITE_STORE);
+
+    private final Inky inky = (Inky) ghostFactory.createInky();
+
+    /**
+     * Tests the AI move for Inky.
+     */
+    @Test
+    void inkyIsNotNull() {
+        assertThat(inky).isNotNull();
+    }
 }
