@@ -29,14 +29,11 @@ public class PlayerTest {
 
     @Test
     void testGetKiller() {
-        // Given
-        Unit mockKiller = mock(Unit.class); // Create a mock killer
-        ThePlayer.setKiller(mockKiller);    // Set the killer for the player
+        Unit mockKiller = mock(Unit.class); // Creating a mock killer
+        ThePlayer.setKiller(mockKiller);    // Setting the killer for the player
+        
+        Unit killer = ThePlayer.getKiller(); //gets the unit that killed the player 
 
-        // When
-        Unit killer = ThePlayer.getKiller();
-
-        // Then
-        assertThat(killer).isEqualTo(mockKiller); // Assert that the killer is the one we set
+        assertThat(killer).isEqualTo(mockKiller); 
     }
 }
