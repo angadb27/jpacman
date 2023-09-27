@@ -1,9 +1,12 @@
 package nl.tudelft.jpacman.level;
 
 import nl.tudelft.jpacman.sprite.PacManSprites;
+import nl.tudelft.jpacman.board.Unit;
 import org.junit.jupiter.api.Test;
 
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
 
 /**
  * New Test Case example
@@ -22,5 +25,18 @@ public class PlayerTest {
     @Test
     void testAlive(){
         assertThat(ThePlayer.isAlive()).isEqualTo(true);
+    }
+
+    @Test
+    void testGetKiller() {
+        // Given
+        Unit mockKiller = mock(Unit.class); // Create a mock killer
+        ThePlayer.setKiller(mockKiller);    // Set the killer for the player
+
+        // When
+        Unit killer = ThePlayer.getKiller();
+
+        // Then
+        assertThat(killer).isEqualTo(mockKiller); // Assert that the killer is the one we set
     }
 }
